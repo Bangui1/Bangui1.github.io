@@ -72,41 +72,42 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="img/logo2018.png" class="logoAl13" alt="">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="index.html"class="nav-item nav-link">Nosotros</a>
-                <a href="index.html" class="nav-item nav-link">Servicios</a>
-                <a href="index.html" class="nav-item nav-link">Proyectos</a>
-                <a href="index.html" class="nav-item nav-link">Contacto</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Productos</a>
-                    <div class="dropdown-menu fade-up m-0 productos">
-                        <a href="index.html" class="dropdown-item">Aberturas</a>
-                        <a href="index.html" class="dropdown-item">Cerramientos</a>
-                        <a href="index.html" class="dropdown-item">Claraboyas</a>
-                        <a href="index.html"  class="dropdown-item">Divisorio</a>
-                        <a href="index.html"  class="dropdown-item">Postigones</a>
-                    </div>
+   <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="img/logo2018.png" class="logoAl13" alt="">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+           
+            <a href="#nosotros" class="nav-item nav-link ">Nosotros</a>
+            <a href="#servicios" class="nav-item nav-link ">Servicios</a>
+            <a href="#proyectos" class="nav-item nav-link">Proyectos</a>
+            <a href="#contacto" class="nav-item nav-link">Contacto</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Productos</a>
+                <div class="dropdown-menu fade-up m-0 productos">
+                    <a href="#" class="dropdown-item no-subrayar">Aberturas</a>
+                    <a href="#" class="dropdown-item no-subrayar">Cerramientos</a>
+                    <a href="#" class="dropdown-item no-subrayar">Claraboyas</a>
+                    <a href="#" class="dropdown-item no-subrayar">Divisorio</a>
+                    <a href="#" class="dropdown-item no-subrayar">Postigones</a>
                 </div>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Haz tu consulta<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
-    </nav>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Haz tu consulta<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
     <!-- Navbar End -->
 
 
     <!-- Carousel Start -->
+    <section id="home">
     <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative ">
-            <div class="owl-carousel-item position-relative ">
+            <div class="owl-carousel-item position-relative " >
                 <img class="img-fluid papas" src="img/papas.jpeg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
                     <div class="container">
@@ -177,7 +178,7 @@
         </div>
     </div>
     <!-- Carousel End -->
-
+</section>
 
     <!-- Feature Start -->
     <div class="container-xxl py-5">
@@ -231,6 +232,7 @@
 
 
     <!-- About Start -->
+    <section id="nosotros">
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -280,17 +282,19 @@
             </div>
         </div>
     </div>
+</section>
     <!-- About End -->
 
 
     <!-- Service Start -->
+    <section id="servicios">
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Nuestros servicios</h1>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s" >
                     <div class="service-item">
                        
                         <div class="p-4 text-center ">
@@ -447,6 +451,7 @@
             </div>
         </div>
     </div>
+</section>
     <!-- Service End -->
 
 
@@ -521,12 +526,13 @@
 
 
     <!-- Projects Start -->
+    <section id="proyectos">
     <div class="container-xxl py-5">
         <di5v class="container">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Nuestros Proyectos</h1>
             </div>
-            <div class="row mt-n2 wow fadeInUp" >
+            <div class="row mt-n2 wow fadeInUp"  >
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="mx-2 active" id="enlace" data-filter="*">All</li>
@@ -666,10 +672,12 @@
             </div>
         </div>
     </div>
+</section>
     <!-- Projects End -->
 
 
     <!-- Quote Start -->
+    <section id="contacto">
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -684,7 +692,7 @@
                             <h1 class="display-5 mb-4">Realice su consulta</h1>
                         </div>
                         <p class="mb-4 pb-2"></p>
-                        <form>
+                        <form >
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control border-0 input-contacto" placeholder="Nombre" style="height: 55px;">
@@ -716,6 +724,7 @@
             </div>
         </div>
     </div>
+</section>
     <!-- Quote End -->
 
 

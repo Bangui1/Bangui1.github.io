@@ -124,10 +124,79 @@
         clicAutomaticoEnlace();
     });
 
-
-
-
-
+    document.addEventListener("DOMContentLoaded", function() {
+        var navbarHeight = document.querySelector('.navbar').offsetHeight;
+        var defaultOffsetCorrection = 20; // Ajusta la compensación predeterminada según sea necesario
+        var servicesContactOffsetCorrection = 5; // Ajusta la compensación específica para las secciones de Servicios y Contacto
+    
+        var links = document.querySelectorAll('.nav-item.nav-link');
+        var isScrolling = false; // Variable para rastrear si se está desplazando
+    
+        function actualizarEnlaceActivo() {
+            var scrollPos = window.scrollY + navbarHeight + defaultOffsetCorrection;
+    
+            links.forEach(function(link) {
+                var section = document.querySelector(link.getAttribute('href'));
+    
+                if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    
+        function aplicarUnderline(e) {
+            if (!isScrolling) {
+                var link = e.target;
+                link.classList.add('clicked'); // Agregar clase para el subrayado persistente
+    
+                setTimeout(function() {
+                    link.classList.remove('clicked'); // Quitar clase después de 1 segundo
+                }, 800); // 1000 milisegundos = 1 segundo
+            }
+        }
+    
+        links.forEach(function(link) {
+            link.addEventListener('click', aplicarUnderline);
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Evitar el comportamiento de desplazamiento predeterminado
+    
+                var targetId = this.getAttribute('href'); // Obtener el ID del objetivo
+                var targetOffset = document.querySelector(targetId).offsetTop; // Obtener el desplazamiento vertical del objetivo
+                
+                var targetSection = targetId.substring(1); // Obtener el ID de la sección sin el signo de numeral (#)
+                var correctedOffset = targetSection === 'servicios' || targetSection === 'contacto' ? servicesContactOffsetCorrection : defaultOffsetCorrection;
+    
+                window.scrollTo({
+                    top: targetOffset - navbarHeight - correctedOffset, // Ajustar la posición de desplazamiento
+                    behavior: 'smooth' // Desplazamiento suave
+                });
+    
+                // Remover la clase 'active' de todos los enlaces
+                links.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+    
+                // Agregar la clase 'active' al enlace actual
+                this.classList.add('active');
+            });
+        });
+    
+        window.addEventListener('scroll', function() {
+            isScrolling = true;
+            setTimeout(function() {
+                isScrolling = false;
+                actualizarEnlaceActivo();
+            }, 500); // Retraso para permitir que la animación de desplazamiento termine
+        });
+    
+        // Llama a actualizarEnlaceActivo al cargar la página para establecer el estado inicial
+        actualizarEnlaceActivo();
+    });
+    
+    
+    
     
 })(jQuery);
 

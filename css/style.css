@@ -5,6 +5,11 @@
     --dark: #000752;
 }
 
+
+
+
+
+
 .fw-medium {
     font-weight: 500 !important;
 }
@@ -215,10 +220,20 @@
     outline: none;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: #285ca4;
+.navbar-light .navbar-nav ,
+.navbar-light .navbar-nav .nav-link.active,
+.nav-link.clicked {
+    text-decoration-color: #285ca4;
+    text-underline-offset: 0.2em; /* Ajusta la posición vertical del subrayado */
 }
+
+.nav-link {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    transition: text-decoration-color 300ms;
+    text-underline-offset: 0.2em;
+}
+
+
 
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link  {
@@ -742,3 +757,4 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
