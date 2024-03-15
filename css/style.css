@@ -227,6 +227,16 @@
     text-underline-offset: 0.2em; /* Ajusta la posición vertical del subrayado */
 }
 
+.nav-link:hover{
+    color: #285ca4 !important;
+
+}
+
+.premium{
+    color: #1653a8 !important;
+    font-weight: 500;
+}
+
 .nav-link {
     text-decoration: underline 0.15em rgba(0, 0, 0, 0);
     transition: text-decoration-color 300ms;
@@ -350,30 +360,27 @@
 }
 
 .header-carousel .owl-dot {
+
     position: relative;
     display: inline-block;
     margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    background: transparent;
-    border: 1px solid #FFFFFF;
-    transition: .5s;
-}
-
-.header-carousel .owl-dot::after {
-    position: absolute;
-    content: "";
     width: 5px;
     height: 5px;
-    top: 4px;
-    left: 4px;
-    background: transparent;
+    background-color: white;
     border: 1px solid #FFFFFF;
+    transition: .5s;
+    border-radius: 0%;
 }
 
+
+
 .header-carousel .owl-dot.active {
+
     background: var(--primary);
     border-color: var(--primary);
+    width: 10px;
+    height: 10px;
+    transition: all 0.6s;
 }
 
 .page-header {
