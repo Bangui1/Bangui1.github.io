@@ -126,7 +126,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         var navbarHeight = document.querySelector('.navbar').offsetHeight;
-        var defaultOffsetCorrection = 18; // Ajusta la compensación predeterminada según sea necesario
+        var defaultOffsetCorrection = 25; // Ajusta la compensación predeterminada según sea necesario
         var servicesContactOffsetCorrection = 5; // Ajusta la compensación específica para las secciones de Servicios y Contacto
     
         var links = document.querySelectorAll('.nav-item.nav-link');
@@ -153,7 +153,7 @@
     
                 setTimeout(function() {
                     link.classList.remove('clicked'); // Quitar clase después de 1 segundo
-                }, 800); // 1000 milisegundos = 1 segundo
+                }, 1000); // 1000 milisegundos = 1 segundo
             }
         }
     
@@ -197,42 +197,42 @@
     
     var dropdownItems = document.querySelectorAll('.dropdown-item');
 
-        // Recorrer todos los enlaces y agregar un evento de clic
-        dropdownItems.forEach(function(item) {
-            item.addEventListener('click', function(event) {
-                // Evitar el comportamiento predeterminado del enlace
-                event.preventDefault();
-                
-                // Obtener el valor del atributo data-target
-                var target = this.getAttribute('data-target');
-                
-                // Obtener el elemento de lista correspondiente
-                var listItem = document.querySelector('[data-filter=".' + target + '"]');
-                
-                // Quitar la clase "active" de todos los elementos de lista
-                document.querySelectorAll('#portfolio-flters li').forEach(function(li) {
-                    li.classList.remove('active');
-                });
-                
-                // Agregar la clase "active" al elemento de lista correspondiente
-                listItem.classList.add('active');
-                
-                // Simular un clic en el elemento de lista para activar su funcionalidad
-                listItem.click();
-                
-                // Obtener la posición de la sección de proyectos
-                var proyectosSection = document.querySelector('#proyectos');
-                var proyectosSectionOffset = proyectosSection.offsetTop;
-                
-                // Desplazarse a la sección de proyectos
-                window.scrollTo({
-                    top: proyectosSectionOffset,
-                    behavior: 'smooth'
-                });
+    // Recorrer todos los enlaces y agregar un evento de clic
+    dropdownItems.forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            // Evitar el comportamiento predeterminado del enlace
+            event.preventDefault();
+            
+            // Obtener el valor del atributo data-target
+            var target = this.getAttribute('data-target');
+            
+            // Obtener el elemento de lista correspondiente
+            var listItem = document.querySelector('[data-filter=".' + target + '"]');
+            
+            // Quitar la clase "active" de todos los elementos de lista
+            document.querySelectorAll('#portfolio-flters li').forEach(function(li) {
+                li.classList.remove('active');
+            });
+            
+            // Agregar la clase "active" al elemento de lista correspondiente
+            listItem.classList.add('active');
+            
+            // Simular un clic en el elemento de lista para activar su funcionalidad
+            listItem.click();
+            
+            // Obtener la posición de la sección de proyectos
+            var proyectosSection = document.querySelector('#proyectos');
+            var proyectosSectionOffset = proyectosSection.offsetTop;
+            
+            // Desplazarse a la sección de proyectos
+            window.scrollTo({
+                top: proyectosSectionOffset,
+                behavior: 'smooth'
             });
         });
-    
+    });
 
+    
     
     
 })(jQuery);
