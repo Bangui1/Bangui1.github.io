@@ -372,6 +372,19 @@
     border-radius: 0%;
 }
 
+.fa-whatsapp{
+    font-size: x-large;
+
+
+}
+
+.d-lg-block{
+
+    display: flex !important;
+    justify-content: start;
+
+}
+
 
 
 .header-carousel .owl-dot.active {
