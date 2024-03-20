@@ -693,19 +693,22 @@
                             <h1 class="display-5 mb-4">Realice su consulta</h1>
                         </div>
                         <p class="mb-4 pb-2"></p>
-                        <form >
+                        <form
+                        action="https://formspree.io/f/mkndvqla"
+                        method="POST"
+                      >
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0 input-contacto" placeholder="Nombre" style="height: 55px;">
+                                    <input id="name" name="name" type="text" class="form-control border-0 input-contacto" placeholder="Nombre" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Apellido" style="height: 55px;">
+                                    <input id="email" name="email" type="email" class="form-control border-0" placeholder="Apellido" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Celular" style="height: 55px;">
+                                    <input id="cellphone" name="cellphone" type="text" class="form-control border-0" placeholder="Celular" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
+                                    <select id="service" name="service" class="form-select border-0" style="height: 55px;">
                                         <option selected>Seleccione un servicio</option>
                                         <option value="1">Servicio 1</option>
                                         <option value="2">Servicio 2</option>
@@ -713,7 +716,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Mensaje"></textarea>
+                                    <textarea id="message" name="message" class="form-control border-0" placeholder="Mensaje"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
