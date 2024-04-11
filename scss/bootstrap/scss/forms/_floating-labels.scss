@@ -46,7 +46,7 @@
   > .form-control:not(:placeholder-shown),
   > .form-select {
     ~ label {
-      opacity: $form-floating-label-opacity;
+      opacity: 100;
       transform: $form-floating-label-transform;
     }
   }

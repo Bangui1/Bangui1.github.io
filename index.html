@@ -37,7 +37,7 @@
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Cargando...</span>
+
         </div>
     </div>
     <!-- Spinner End -->
@@ -246,12 +246,16 @@
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">Nosotros</h1>
                         </div>
-                        <p class="mb-4 pb-2">Hace unos años atrás, comenzamos hacer realidad nuestro proyecto de la formación de una pequeña empresa al servicio de nuestros clientes, con la idea de resolver sus problemas en concepto de aberturas de aluminio, de calidad y con un precio competitivo en este mercado.
-                            Nuestra idea es satisfacer a nuestros clientes, con profesionalidad, servicio y cumplimiento AL-13, fue incursionando en el mercado, con un resultado positivo, al ver nuestro crecimiento en tan pocos años.
-                            Contamos con un equipo a su disposición para un mejor asesoramiento, y encontrar la solución a sus ideas.
-                            Ofrecemos una gama de productos nacionales e importados, con los mejores diseños del mercado y la máxima calidad en aluminio como se merecen nuestros clientes.
-                            No queremos ser grandes, queremos ser confiables y seguros!
-                            Esperamos vernos pronto en nuestra fábrica y showroon.</p>
+                        <p class="mb-4 pb-2">Hace una década, dimos vida a nuestro sueño: crear una empresa dedicada a servir a nuestros clientes, con el firme propósito de resolver sus necesidades en cuanto a aberturas de aluminio, ofreciendo <strong>calidad </strong> y <strong> precios competitivos </strong> en el mercado. Nuestra visión siempre ha sido satisfacer a nuestros clientes con <strong> profesionalismo</strong>, <strong> excelente servicio</strong> y  <strong>puntualidad. </strong></p>
+                            <p class="mb-4 pb-2">Desde el inicio, <strong class="al13 ">AL13</strong> ha incursionado en el mercado con resultados positivos, viendo un crecimiento significativo en tan solo unos pocos años. Esto ha sido posible gracias al arduo trabajo de nuestro equipo y al compromiso inquebrantable con la excelencia en todo lo que hacemos.
+                            </p>
+                            <p class="mb-4 pb-2">Contamos con un equipo dedicado y altamente capacitado que está a disposición de nuestros clientes para brindarles el mejor asesoramiento y encontrar soluciones a sus ideas y necesidades específicas. Ofrecemos una amplia gama de productos, con los diseños más innovadores y la<strong> máxima calidad </strong>en aluminio, porque creemos que nuestros clientes merecen lo mejor. En <strong class="al13">AL13</strong> queremos construir relaciones duraderas con nuestros clientes, basadas en la confianza mutua y la satisfacción garantizada.
+                            </p>
+                            <p class="mb-4 pb-2">Esperamos darle la bienvenida pronto a nuestra fábrica y showroom, donde podrá descubrir por sí mismo la calidad y el compromiso que nos distinguen en el mercado de aberturas de aluminio.
+                            </p>
+                            <p class="mb-4 pb-2 ">Gracias por considerar a <strong class="al13">AL13</strong> para sus necesidades en aberturas de aluminio. Estamos ansiosos por servirle y superar sus expectativas.
+                            </p>
+                            
                         <div class="row g-4 mb-4 pb-2">
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="d-flex align-items-center">
@@ -679,24 +683,24 @@
 
     <!-- Quote Start -->
     <section id="contacto">
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container quote px-lg-0">
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0 ">
+        <div class="container quote px-lg-0 ">
+   
             <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute img-fluid w-100 h-100" src="img/IMG_6386.JPG" style="object-fit: cover;" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-6 quote-text py-5 wow fadeIn moving" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">Realice su consulta</h1>
                         </div>
                         <p class="mb-4 pb-2"></p>
-                        <form
-                        action="https://formspree.io/f/mkndvqla"
-                        method="POST"
-                      >
+                        <form action="https://api.web3forms.com/submit" id="formulario" method="POST">
+                            <input type="hidden" name="access_key" value="63d293d9-3fda-4c01-b536-c59238b5e984">
+                            
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input id="name" name="name" type="text" class="form-control border-0 input-contacto" placeholder="Nombre" style="height: 55px;">
@@ -716,14 +720,18 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea id="message" name="message" class="form-control border-0" placeholder="Mensaje"></textarea>
+                                    <textarea id="message" name="message" class="form-control border-0 msg"  rows="4" cols="50" placeholder="Mensaje"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
+                                    <button id="submit-button" class="btn btn-primary w-100 boton py-3 is-loading" type="submit">Enviar</button>
+                           
                                 </div>
+
+
                             </div>
                         </form>
                     </div>
+        
                 </div>
             </div>
         </div>

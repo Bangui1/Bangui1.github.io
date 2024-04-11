@@ -232,6 +232,58 @@
         });
     });
 
+
+
+    const form = document.getElementById('formulario');
+    const submitButton = document.getElementById('submit-button');
+    const quoteContainer = document.querySelector('.moving'); // Seleccionar el contenedor correcto
+    
+    form.addEventListener('submit', function(e) {
+     e.preventDefault();
+     const formData = new FormData(form);
+     const object = Object.fromEntries(formData);
+     const json = JSON.stringify(object);
+    
+     // Cambiar el contenido del botón a un spinner
+     submitButton.innerHTML = '<div class="spinner-border" style="width: 25px; height: 25px;" role="status"></div>';
+    
+     fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+     })
+     .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          // Reemplazar todo el contenido del contenedor con el mensaje de éxito y la animación
+          quoteContainer.innerHTML = `
+            <div class="p-lg-5 pe-lg-0">
+            <div class="section-title text-start">
+            <h2 class="display-5 mb-4">Consulta enviada.</h2>
+            </div>
+            
+            <p class="h5" >Gracias por su consulta, le responderemos en la brevedad.</p>
+            <div class="success-animation">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+            </div>
+            </div>
+          `;
+        } else {
+          console.log(response);
+          quoteContainer.innerHTML = json.message;
+        }
+     })
+     .catch(error => {
+        console.log(error);
+        quoteContainer.innerHTML = "Something went wrong!";
+     })
+    });
     
     
     
